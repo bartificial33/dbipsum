@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>DB Ipsum</title>
+</head>
+<body>
+    <section>
+        <div id="header">
+            <h1>DB Ipsum</h1>
+        </div> <!--ends header-->
+        <div id="options"> <!--should be grid-->
+            <label for="numberofp">Number of paragraphs:</label>
+            <select name="numberofp" id="selectP">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button id="submit">Generate</button>
+        </div> <!--ends options-->
+        <div id="results">
+            <div id="texts"><!--texts get added here in p tag--></div>
+            <!-- <div>
+                <button id="copy">Copy</button>
+            </div> -->
+        </div>
+    </section>
+</body>
+</html>
+
+<script type="module">
+
+const textsArray = [
+    "High-speed energy blasts collide with neon city lights, while whispers of “over 9000” echo through digital alleyways like some underground code. Senzu beans? The new superfood craze, obviously, because who needs kale when you’ve got magic beans that fix broken bones? The Capsule Corp logo is plastered across retro jackets, with holographic Shenron patches that glimmer in the moonlight. Fusion dances are now the hottest party moves, everyone just hoping they nail the choreography before they vanish into thin air. Z-Fighters merch floods the street markets, with pop-up stands offering Power Pole keychains and Kame House beach towels.",
+    "Dragon Balls have gone from mythical items to the ultimate accessories, customized to match the color of your aura. A Hyperbolic Time Chamber pop-up experience promises a year’s worth of gains in a single afternoon, but the entry fee? Pricier than a Saiyan’s appetite. Everyone’s on a “Kaioken” level fitness routine now, with workout classes that promise to triple your strength in minutes—if you can handle the pressure. Destructo Disc frisbees are trending in local parks, with weekend tournaments turning into mini World Martial Arts Championships. Saiyan hair dye kits are selling out, with spiky styles in every shade of the Super Saiyan rainbow.",
+    "Gravity rooms have become the latest VR experience, promising you can “train like a Saiyan” without ever leaving your living room. Ramen shops are offering “Saiyan strength” bowls with noodles that make you feel like you could take on the Red Ribbon Army. Scouter sunglasses with built-in face filters are the new must-have accessory, perfect for casual power level checks on your friends. Energy drinks branded with Vegeta’s face boast flavors like “Galick Gun Grape” and “Final Flash Citrus.” Capsule-shaped water bottles are all the rage, as if hydration might unlock your hidden potential.",
+    "Every street corner's got a hologram of Shenron, offering wish-granting consultations in 15-minute sessions, but don’t expect him to bring anyone back from the dead. Namekian zen gardens are the hottest new trend, complete with tiny green sand and rock formations in the shape of dragon balls. “Instant Transmission” delivery services promise packages at light-speed, though rumor has it that they take shortcuts through King Kai’s planet. Martial arts dojos advertise “Saiyan-approved” sparring sessions, and the flyers all come with a complimentary Senzu bean. Hoverboards with Nimbus Cloud designs are flying off the shelves, everyone’s chasing that floating-on-air vibe.",
+    "Super Saiyan transformations? Yesterday’s news. Now it’s all about tapping into Ultra Instinct, the zen mode that’s basically a mindfulness hack on steroids. Capsule Corp cologne promises to make you smell like you’ve just stepped out of the Hyperbolic Time Chamber, all sweat and intensity. “Fusion” playlists are trending on streaming platforms, with beats that somehow make you feel like you’re powering up mid-song. There are vintage vending machines offering energy drinks labeled “Kai’s Essence,” and you’d swear they give you a little boost after a long day. Street artists tag walls with murals of Kamehameha waves, bright blue paint splashed across concrete like an energy blast in action.",
+    "Power levels are the new social currency, with Scouter apps ranking everyone in the vicinity, and no one’s too happy when they score below 500. Kami’s Lookout is an influencer hotspot, all about catching that rare sunrise shot above the clouds. “Final Flash” dance-offs are the rage at late-night raves, with LED bracelets pulsing to the beat of Ginyu Force theme remixes. Earth’s fashion week features Saiyan armor-inspired outfits, and everyone’s lining up to grab some “Namekian chic” capes. Pop-up cafes serve Spirit Bomb lattes, frothy drinks that almost make you feel like you’re saving the universe one sip at a time.",
+    "Dragon Radar apps are the go-to for GPS now, but don’t be surprised if you end up on a wild goose chase for a seven-star ball. Instant noodles branded as “Kame Ramen” come with a tiny green Yajirobe on the cup, claiming to give you samurai strength in just three minutes. All the health junkies are replacing kale with Namekian greens, and they swear it boosts your power level like nothing else. Senzu bean snacks are the latest energy bar alternative, each bite promising to get you back to fighting form. Street performers are throwing fake Destructo Discs, and everyone’s hoping they don’t get hit with a holographic cut.",
+    "Time travel tourism is taking off, with day trips to Future Trunks’ timeline where you can snap a selfie with a dystopian landscape. The fashion scene’s flooded with Saiyan armor replicas, because who doesn’t want to feel invincible on their way to work? Podcasts are dropping about “Kakarot and Chill” nights, where you catch up on the latest Saiyan gossip. The hottest drink on the menu? A piccolo-inspired green matcha latte with Namekian energy boosters. Ultra Instinct-inspired yoga classes promise enlightenment, but rumor has it you might just end up floating away if you don’t stay grounded.",
+    "Kamehameha classes are trending at local gyms, where beginners try to pull off a wave without looking like they’re flinging air. Senzu tea shops offer herbal blends that claim to replenish your “energy reserves,” as if you’ve just been through a Cell saga. Pop-up Z-Fighter shops sell Time Machine blueprints on posters, because who doesn’t want a piece of history in their living room? Namekian headbands are back in fashion, and they say the secret to rocking it is finding your inner Piccolo. Galactic travel agencies are hyping up “Kaioken vacation packages,” promising the ultimate adrenaline rush, Saiyan-style.",
+    "Kai-approved meditation retreats are all the rage, but with a waiting list longer than Snake Way. Holographic street signs point to King Kai’s planet, though no one really knows how to get there. Scouters with augmented reality overlays show power levels and hidden deals, blending tech and martial arts like it’s no big deal. Vintage Saiyan pod chairs are popping up in cafes, perfect for those mid-afternoon naps with a Saiyan twist. Everyone’s talking about their “Vegeta mindset” for self-discipline, but let’s be real, it’s just an excuse to buy more weighted training clothes.",
+    "Ultra Instinct-inspired smoothies are everywhere, promising to unlock hidden reflexes with a blend of dragon fruit and Namekian greens. Streetwear is going full Capsule Corp, with bomber jackets covered in patches of Frieza’s different forms, because why settle for one look when you can have all four? The hottest accessory? A Scouter earpiece that doesn’t even work, but who cares when it matches your Saiyan armor hoodie. Weekend festivals offer “Kamehameha paintball,” with teams launching blue-dyed paint blasts in epic slow-mo. Weighted wristbands are now a fashion statement, with people claiming they’re building strength with every coffee sip.",
+    "Saiyan pods are the new minimalist sleeping solution, a cocoon-like pod that promises ‘true warrior rest’ in half the time. Virtual reality worlds let you fight in the World Martial Arts Tournament, but beware—it’s easy to get caught in a digital Destructo Disc. Ginyu Force dance moves are going viral, with everyone trying to perfect that ridiculous, yet oddly satisfying, arm flair. Energy drinks called ‘Kakarot Kick’ promise Super Saiyan stamina, but most people just end up jittery and loud. Holo-projectors are putting life-sized Shenron displays in bedrooms, like some celestial dragon nightlight.",
+    "Korin Tower-inspired climbing gyms are popping up, with vertical mazes that make you feel like you’re training for the next Saiyan saga. Spirit Bomb yoga classes are all about building collective energy, with group chants that could probably power up a small village. Instant Transmission services offer mystery vacations, where you won’t know your destination until you arrive, because, hey, adventure is in the unknown. Galactic Space buses are featuring gravity-free rides, with ticket prices that would make even Frieza sweat. Super Saiyan VR experiences have you scream into a headset until you feel the power surge—or just lose your voice.",
+    "Namekian smoothie bowls are everywhere, topped with star-shaped fruit and a hint of lime, because why not go green when it’s literally from another planet? Gyms are advertising ‘Saiyan gains’ classes, with circuits designed to push you to your limit and then some. Capsule Corp-branded duffel bags are trending, with enough compartments to hold an entire day’s worth of Senzu beans and gym gear. Hyperbolic Time Chamber escape rooms are the latest craze, where you have to solve puzzles before the clock runs out or you’re ‘stuck for a year.’ Piccolo-style cloaks are showing up in high fashion, giving off major ‘warrior monk’ vibes.",
+    "Kai-approved energy crystals are the new meditation tool, said to enhance focus and maybe even unlock hidden powers if you’re lucky. Goku’s orange gi is the new color trend, with people rocking head-to-toe orange like it’s the new black. Capsule Corp-sponsored pop-up shops sell Time Machine miniatures that double as clocks, just in case you need a reminder of how fast time flies. Everyone’s into ‘Vegeta Vibes’ face masks, claiming to reduce stress and increase Saiyan pride in just 15 minutes. Destructo Disc holograms are the newest party decoration, flashing above crowds like neon halos.",
+    "Rooftop bars are offering drinks called ‘Final Flash Fizz,’ a citrusy punch that packs a serious punch, no pun intended. Galactic newsfeeds are buzzing about the latest fashion faux pas from the Ginyu Force, because apparently, not all battle armor is created equal. People are swapping their sneakers for weighted Saiyan boots, with claims that it makes every step a training session. The Capsule Corp app is trending, letting you schedule ‘Instant Transmissions’ to pop-ups you didn’t even know existed. Spirit Bomb energy shots are the new coffee, with an extra kick that supposedly aligns your chakras.",
+    "Time travel influencers are the new thing, posting pics from alternate timelines like it’s just another day at the beach. Goku’s Nimbus cloud is now the ultimate lounge chair, with a portable version that you can carry around on your back. Holo-gyms let you spar with virtual Saiyans, offering a taste of real combat without any actual broken bones. Capsule Corp has released a portable Hyperbolic Time Chamber, but good luck finding one—they sell out faster than Senzu beans at a martial arts tournament. Namekian-themed parks are the new chill spots, with green sand and water features that glow under moonlight.",
+    "Weighted training clothes are hitting mainstream fashion, with people adding extra layers just to feel a little more like Vegeta on a Tuesday. Spirit Bomb mocktails are showing up at rooftop bars, with enough sugar to give you a temporary power surge. Scouters are now just phone apps, letting you ‘scan’ your friends to see who’s got the highest energy level that day. The fashion world is buzzing about Kai’s latest ‘Celestial Couture’ collection, with angelic robes and ethereal accessories. Capsule Corp has a new line of backpacks that claim to hold ‘an infinite amount of stuff’—no dragon balls required.",
+    "Kami-themed wellness retreats are all about balancing your inner dragon, with guided meditations led by Namekian monks. Scouter replicas are the new sunglasses, though they don’t actually detect anything but look pretty cool. Z-Fighter pop-up cafes are serving food named after iconic moves—try the ‘Galick Gun Grilled Cheese’ if you dare. Podcasts about Saiyan training regimes are taking over the airwaves, with tips on ‘tapping into your inner Kakarot.’ Saiyan pods have become the ultimate minimalist living solution, perfect for that small-space vibe with just a hint of extraterrestrial flair.",
+    "Hyperbolic Time Chamber-style gyms offer ‘compression sessions,’ promising results in a fraction of the time if you’re ready to sweat. Capsule Corp’s new streaming service features ‘Vegeta’s Victory Playlist,’ a curated list of the Prince of Saiyans’ favorite pump-up jams. Namekian-themed spas are the latest wellness trend, with green mud masks that claim to detoxify and maybe even give you a little extra wisdom. Everyone’s into ‘Dragon Radar’ geo-caching, with treasure hunts for capsule collectibles hidden around the city. Weighted arm bands are trending on social media, promising that every scroll is now a mini-workout."
+]
+
+// capture the number of items in textsArray
+const amountOfTexts = textsArray.length;
+
+// get a random number between 0 and the total number of texts
+const getRandomNumber = () => Math.floor(Math.random() * amountOfTexts);
+
+// get the number of paragraphs that need to be shown based on the number chosen in the select and convert it to a number type
+function getNumberOfTexts() {
+    const choice = document.getElementById('selectP').value;
+    return Number(choice);
+}
+
+// return an array with the desired # of RANDOM p's without duplicates.
+function getTexts() {
+    const randomTexts = [];
+    while (randomTexts.length < getNumberOfTexts()) {
+        const random = getRandomNumber();
+        const randomText = textsArray[random];
+        if (!randomTexts.includes(randomText)) {
+            randomTexts.push(randomText);
+        }
+    }
+    return randomTexts;
+}
+
+// render a <p> inside div#results for each item in the texts array
+function renderP() {    
+    const singleP = getTexts();
+    singleP.forEach((p) => {
+        document.querySelector('#texts').insertAdjacentHTML("afterbegin", `<p class="dummy-text">${p}</p>`);
+    });
+}
+
+// clear all existing p's
+function clearAllText() {
+    const elements = document.getElementsByClassName('dummy-text');
+    while (elements.length > 0) {
+        elements[0].remove(); // Remove the first element until none remain
+    }
+}
+
+// function to clear and render at the same time
+function generateAll() {
+    clearAllText();
+    renderP();
+}
+
+// on click of submit button, run the generateAll function
+document.getElementById('submit').addEventListener('click', generateAll);
+
+
+
+</script>
