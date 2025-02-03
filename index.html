@@ -8,26 +8,30 @@
 </head>
 <body>
     <section>
-        <div id="header">
+        <div class="container">
             <h1>DB Ipsum</h1>
-        </div> <!--ends header-->
-        <div id="options"> <!--should be grid-->
-            <label for="numberofp">Number of paragraphs:</label>
-            <select name="numberofp" id="selectP">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <button id="submit">Generate</button>
-        </div> <!--ends options-->
-        <div id="results">
-            <div id="texts"><!--texts get added here in p tag--></div>
-            <!-- <div>
-                <button id="copy">Copy</button>
-            </div> -->
         </div>
+    </section>
+    <section>
+        <div class="container">
+            <div id="options">
+                <label for="numberofp">Number of paragraphs:</label>
+                <select name="numberofp" id="selectP">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button id="submit">Generate</button>
+            </div> <!--ends options-->
+            <div id="results">
+                <div id="texts"><!--texts get added here in p tag--></div>
+                <!-- <div>
+                    <button id="copy">Copy</button>
+                </div> -->
+            </div>
+        </div> <!-- closes container -->
     </section>
 </body>
 </html>

@@ -1,9 +1,18 @@
 section {
-    max-width: var(--max-screen-width);
-    min-width: var(--min-screen-width);
+    display: flex;
+    max-width: 320px;
+    min-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: var(--space-xs) var(--space-m);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 p {
