@@ -15,36 +15,34 @@ h1 {
 }
 
 
-
 html {
     font-size: 62.5%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 html.cf-theme-dark {
     color-scheme: dark;
 }
 :root {
     --min-screen-width: 320px;
-    --max-screen-width: 900px;
-    --primary: hsla(238, 100%, 62%, 1);
-    --primary-5: hsla(238, 100%, 62%, 0.05);
-    --primary-10: hsla(238, 100%, 62%, 0.1);
-    --primary-20: hsla(238, 100%, 62%, 0.2);
-    --primary-30: hsla(238, 100%, 62%, 0.3);
-    --primary-40: hsla(238, 100%, 62%, 0.4);
-    --primary-50: hsla(238, 100%, 62%, 0.5);
-    --primary-60: hsla(238, 100%, 62%, 0.6);
-    --primary-70: hsla(238, 100%, 62%, 0.7);
-    --primary-80: hsla(238, 100%, 62%, 0.8);
-    --primary-90: hsla(238, 100%, 62%, 0.9);
-    --primary-d-1: hsla(240, 56%, 50%, 1);
-    --primary-d-2: hsla(243, 54%, 37%, 1);
-    --primary-d-3: hsla(246, 51%, 25%, 1);
-    --primary-d-4: hsla(250, 43%, 13%, 1);
-    --primary-l-1: hsla(247, 100%, 70%, 1);
-    --primary-l-2: hsla(251, 100%, 77%, 1);
-    --primary-l-3: hsla(254, 100%, 85%, 1);
-    --primary-l-4: hsla(256, 100%, 92%, 1);
+    --max-screen-width: 1400px;
+    --primary: #FF7B17;
+    --primary-5: #ff7b170d;
+    --primary-10: #ff7b171a;
+    --primary-20: #ff7b1733;
+    --primary-30: #ff7b174d;
+    --primary-40: #ff7b1766;
+    --primary-50: #ff7b1780;
+    --primary-60: #ff7b1799;
+    --primary-70: #ff7b17b3;
+    --primary-80: #ff7b17cc;
+    --primary-90: #ff7b17e6;
+    --primary-d-1: #c86219;
+    --primary-d-2: #924a17;
+    --primary-d-3: #613314;
+    --primary-d-4: #341e0e;
+    --primary-l-1: #ff974d;
+    --primary-l-2: #ffb27a;
+    --primary-l-3: #ffcba3;
+    --primary-l-4: #ffe5d1;
     --secondary: hsla(0, 94%, 68%, 1);
     --secondary-5: hsla(0, 94%, 68%, 0.05);
     --secondary-10: hsla(0, 94%, 68%, 0.1);
@@ -133,25 +131,25 @@ html.cf-theme-dark {
     --error-70: hsla(351, 95%, 56%, 0.7);
     --error-80: hsla(351, 95%, 56%, 0.8);
     --error-90: hsla(351, 95%, 56%, 0.9);
-    --space-4xs: clamp(0.52rem, calc(-0.05vw + 0.54rem), 0.49rem);
-    --space-3xs: clamp(0.66rem, calc(0.08vw + 0.63rem), 0.7rem);
-    --space-2xs: clamp(0.82rem, calc(0.3vw + 0.72rem), 0.99rem);
-    --space-xs: clamp(1.02rem, calc(0.65vw + 0.82rem), 1.4rem);
-    --space-s: clamp(1.28rem, calc(1.21vw + 0.89rem), 1.98rem);
-    --space-m: clamp(1.6rem, calc(2.07vw + 0.94rem), 2.8rem);
-    --space-l: clamp(2rem, calc(3.38vw + 0.92rem), 3.96rem);
-    --space-xl: clamp(2.5rem, calc(5.34vw + 0.79rem), 5.6rem);
-    --space-2xl: clamp(3.13rem, calc(8.26vw + 0.48rem), 7.92rem);
-    --space-3xl: clamp(3.91rem, calc(12.56vw + -0.11rem), 11.19rem);
-    --space-4xl: clamp(4.88rem, calc(18.87vw + -1.16rem), 15.83rem);
-    --text-xs: clamp(1.26rem, calc(-0.43vw + 1.4rem), 1.01rem);
-    --text-s: clamp(1.42rem, calc(-0.12vw + 1.46rem), 1.35rem);
-    --text-m: clamp(1.6rem, calc(0.34vw + 1.49rem), 1.8rem);
-    --text-l: clamp(1.8rem, calc(1.03vw + 1.47rem), 2.4rem);
-    --text-xl: clamp(2.02rem, calc(2.02vw + 1.38rem), 3.2rem);
-    --text-2xl: clamp(2.28rem, calc(3.42vw + 1.18rem), 4.26rem);
-    --text-3xl: clamp(2.56rem, calc(5.38vw + 0.84rem), 5.68rem);
-    --text-4xl: clamp(2.88rem, calc(8.09vw + 0.29rem), 7.58rem);
+    --space-4xs: clamp(0.52rem, calc(-0.03vw + 0.53rem), 0.49rem);
+    --space-3xs: clamp(0.66rem, calc(0.04vw + 0.64rem), 0.7rem);
+    --space-2xs: clamp(0.82rem, calc(0.16vw + 0.77rem), 0.99rem);
+    --space-xs: clamp(1.02rem, calc(0.35vw + 0.91rem), 1.4rem);
+    --space-s: clamp(1.28rem, calc(0.65vw + 1.07rem), 1.98rem);
+    --space-m: clamp(1.6rem, calc(1.11vw + 1.24rem), 2.8rem);
+    --space-l: clamp(2rem, calc(1.81vw + 1.42rem), 3.96rem);
+    --space-xl: clamp(2.5rem, calc(2.87vw + 1.58rem), 5.6rem);
+    --space-2xl: clamp(3.13rem, calc(4.44vw + 1.71rem), 7.92rem);
+    --space-3xl: clamp(3.91rem, calc(6.75vw + 1.75rem), 11.19rem);
+    --space-4xl: clamp(4.88rem, calc(10.13vw + 1.64rem), 15.83rem);
+    --text-xs: clamp(1.26rem, calc(-0.23vw + 1.34rem), 1.01rem);
+    --text-s: clamp(1.42rem, calc(-0.07vw + 1.44rem), 1.35rem);
+    --text-m: clamp(1.6rem, calc(0.19vw + 1.54rem), 1.8rem);
+    --text-l: clamp(1.8rem, calc(0.55vw + 1.62rem), 2.4rem);
+    --text-xl: clamp(2.02rem, calc(1.09vw + 1.68rem), 3.2rem);
+    --text-2xl: clamp(2.28rem, calc(1.84vw + 1.69rem), 4.26rem);
+    --text-3xl: clamp(2.56rem, calc(2.89vw + 1.64rem), 5.68rem);
+    --text-4xl: clamp(2.88rem, calc(4.34vw + 1.49rem), 7.58rem);
     --hero-title-size: var(--text-4xl);
     --post-title-size: var(--text-2xl);
     --nav-link-size: var(--text-s);
@@ -160,10 +158,10 @@ html.cf-theme-dark {
     --card-space: var(--space-s);
     --footer-space: var(--space-s) var(--space-m);
     --radius-xs: clamp(0.4rem, calc(0vw + 0.4rem), 0.4rem);
-    --radius-s: clamp(0.6rem, calc(-0.34vw + 0.91rem), 0.8rem);
-    --radius-m: clamp(1rem, calc(-0.34vw + 1.31rem), 1.2rem);
-    --radius-l: clamp(1.6rem, calc(-0.69vw + 2.22rem), 2rem);
-    --radius-xl: clamp(2.6rem, calc(-1.03vw + 3.53rem), 3.2rem);
+    --radius-s: clamp(0.6rem, calc(-0.19vw + 0.86rem), 0.8rem);
+    --radius-m: clamp(1rem, calc(-0.19vw + 1.26rem), 1.2rem);
+    --radius-l: clamp(1.6rem, calc(-0.37vw + 2.12rem), 2rem);
+    --radius-xl: clamp(2.6rem, calc(-0.56vw + 3.38rem), 3.2rem);
     --radius-full: 999rem;
     --shadow-xs: 0 1px 2px var(--shadow-primary);
     --shadow-s: 0 1.5px 3px var(--shadow-primary);
@@ -172,6 +170,17 @@ html.cf-theme-dark {
     --shadow-xl: 0 6px 48px var(--shadow-primary);
 }
 :root.cf-theme-dark, :root.cf-theme-light .theme-inverted, :root.cf-theme-light .theme-always-dark, :root.cf-theme-dark .theme-inverted .theme-always-dark {
+    --primary: #3d44ff;
+    --primary-5: #3d44ff0d;
+    --primary-10: #3d44ff1a;
+    --primary-20: #3d44ff33;
+    --primary-30: #3d44ff4d;
+    --primary-40: #3d44ff66;
+    --primary-50: #3d44ff80;
+    --primary-60: #3d44ff99;
+    --primary-70: #3d44ffb3;
+    --primary-80: #3d44ffcc;
+    --primary-90: #3d44ffe6;
     --bg-body: hsla(0, 0%, 5%, 1);
     --bg-surface: hsla(0, 0%, 15%, 1);
     --text-body: hsla(0, 0%, 75%, 1);
@@ -493,8 +502,8 @@ html.cf-theme-dark {
     place-content: center;
     border: 2px solid var(--dark-40);
     border-radius: var(--radius-s);
-    width: clamp(1.8rem, calc(-0.69vw + 2.42rem), 2.2rem);
-    height: clamp(1.8rem, calc(-0.69vw + 2.42rem), 2.2rem);
+    width: clamp(1.8rem, calc(-0.37vw + 2.32rem), 2.2rem);
+    height: clamp(1.8rem, calc(-0.37vw + 2.32rem), 2.2rem);
 }
 .checkbox:checked:before {
     transform: scale(1);
@@ -527,8 +536,8 @@ html.cf-theme-dark {
     place-content: center;
     border: 2px solid var(--dark-40);
     border-radius: var(--radius-full);
-    width: clamp(1.8rem, calc(-0.69vw + 2.42rem), 2.2rem);
-    height: clamp(1.8rem, calc(-0.69vw + 2.42rem), 2.2rem);
+    width: clamp(1.8rem, calc(-0.37vw + 2.32rem), 2.2rem);
+    height: clamp(1.8rem, calc(-0.37vw + 2.32rem), 2.2rem);
 }
 .radio:checked:before {
     transform: scale(1);
